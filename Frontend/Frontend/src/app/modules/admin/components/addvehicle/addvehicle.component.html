@@ -1,0 +1,39 @@
+<app-admindashboard>
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth px-0">
+          <div class="row w-100 mx-0">
+            <div class="col-lg-8 mx-auto">
+              <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+               
+                <h2 class="text-center">Vehicle Add Form</h2>
+                <form (ngSubmit)="submit()">
+                  <div class="mb-3">
+                    <label for="vehicleName" class="form-label">Vehicle Name</label>
+                    <input type="text" class="form-control" id="vehicleName" [(ngModel)]="name" name="vehicleName" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="vehicleYear" class="form-label">Vehicle Year</label>
+                    <input type="number" class="form-control" id="vehicleYear" min="1900" max="2024" [(ngModel)]="year" name="vehicleYear" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="vehicleNumber" class="form-label">Vehicle Number</label>
+                    <input type="text" class="form-control" id="vehicleNumber" [(ngModel)]="licensePlate" name="vehicleNumber" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="ownerName" class="form-label">Owner Name</label>
+                    <input type="text" class="form-control" id="ownerName" [(ngModel)]="ownerName" name="ownerName" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="ownerEmail" class="form-label">Owner Email</label>
+                    <input type="email" class="form-control" id="ownerEmail" aria-describedby="emailHelp" [(ngModel)]="ownerEmail" name="ownerEmail" required>
+                    
+                  </div>
+                  <button type="submit" class="text-center btn btn-primary">Submit Vehicle</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</app-admindashboard>

@@ -1,0 +1,35 @@
+
+<app-admindashboard>
+    <div class="container">
+        <div class="col-md-6 offset-md-3">
+          <h2>Change Status</h2>
+          <form (ngSubmit)="onSubmit()">
+            <div *ngIf="vehicle">
+              <div class="col-md-10">
+                <label>Select Advisor Email</label>
+                <select
+                  name="Advisor Email"
+                  class="form-control"
+                  [(ngModel)]="vehicle.saEmail"
+                >
+                  <option>--Select--</option>
+                  <option *ngFor="let adv of AdvisorList">{{ adv.email }}</option>
+                </select>
+              </div>
+              <div class="col-md-10">
+                <label>Change Status</label>
+                <select
+                  name="Status"
+                  class="form-control"
+                  [(ngModel)]="vehicle.serviceStatus"
+                >
+                  <option>--Select--</option>
+                  <option>Scheduled</option>
+                </select>
+              </div>
+              <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+</app-admindashboard>

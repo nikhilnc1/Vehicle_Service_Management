@@ -1,0 +1,99 @@
+<app-admindashboard>
+
+    <div id="print-section" class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="invoice-title">
+                    <h2>Invoice</h2>
+                    <h3 class="pull-right">Order # 12345</h3>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <address>
+                            <strong>From:</strong><br>
+                            <span class="font-weight-bold">{{AdminName}}</span><br>
+                            <span>{{userEmail}}</span><br>
+                            <span>Sangam Service Center</span><br>
+                            <span>SB Road, Pune</span>
+                        </address>
+                    </div>
+                    <div class="col-xs-6 text-left">
+                        <address>
+                            <strong>Service Advisor Details:</strong><br>
+                            <span>{{vehicles.saEmail}}</span><br>
+                        </address>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <address>
+                            <strong>To:</strong><br>
+                            <span>{{vehicles.ownerName}}</span><br>
+                            <span>{{vehicles.oemail}}</span><br>
+                        </address>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                        <address>
+                            <strong>Car Details:</strong><br>
+                            <span>{{vehicles.name}}</span><br>
+                            <span>{{vehicles.year}}</span><br>
+                            <span>Vehicle number: {{vehicles.licensePlate}}</span>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Order summary</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th class="text-center">Price</th>
+                                        <th class="text-center">Quantity</th>
+                                        <th class="text-right">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ng-container *ngFor="let item of items">
+                                        <tr>
+                                            <td>{{ item.itemName }}</td>
+                                            <td class="text-center">{{ item.itemCost | currency: 'INR' }}</td>
+                                            <td class="text-center">{{ item.quantity }}</td>
+                                            <td class="text-right">{{ (item.itemCost * item.quantity) | currency: 'INR' }}</td>
+                                        </tr>
+                                    </ng-container>
+                                    <tr>
+                                        <td class="thick-line" colspan="3"></td>
+                                        <td class="thick-line text-right"><strong>Subtotal:</strong> {{ subtotal | currency: 'INR' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-line" colspan="3"></td>
+                                        <td class="no-line text-right"><strong>Service Cost:</strong> {{ serviceCost | currency: 'INR' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-line" colspan="3"></td>
+                                        <td class="no-line text-right"><strong>Total:</strong> {{ calculateTotal() | currency: 'INR' }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div>
+<button type="button" class="btn btn-primary" (click)="printInvoice()">Print Invoice</button>   
+</div> 
+</app-admindashboard>
+    

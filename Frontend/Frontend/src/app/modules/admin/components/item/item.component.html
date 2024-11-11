@@ -1,0 +1,28 @@
+<app-admindashboard>
+  <br>
+  <div class="col-md-8 offset-md-2">
+    <h2 class="text-center">Item List</h2>
+    <br />
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Description</th>
+          <th>Cost</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.itemName }}</td>
+          <td>{{ item.itemDescription }}</td>
+          <td>{{ item.itemCost }}</td>
+          <td>
+            <button (click)="updateItem(item.id)" class="btn btn-info">Update</button>
+            <button (click)="deleteItem(item.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</app-admindashboard>

@@ -1,0 +1,20 @@
+/* Style for the container */
+.container {
+    margin-top: 50px;
+  }
+  
+  /* Style for the form */
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the submit button */
+  .btn {
+    margin-top: 20px;
+  }
+  
+  /* Style for the headings */
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }

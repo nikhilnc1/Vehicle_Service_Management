@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button type="button" (click)="sidenav.toggle()" mat-icon-button>
+        <mat-icon (click)='sidenav.toggle();'>menu</mat-icon>
+      </button>
+      <h1>Vehicle Service Management</h1>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/admin-dashboard/dashboard">DashBoard</a>
+        <a mat-list-item routerLink="/admin-dashboard/add-vehicles">Add Vehicles</a>
+        <a mat-list-item routerLink="/admin-dashboard/item">Vehicle Service Item</a>
+        <a mat-list-item routerLink="/admin-dashboard/additem">Add Vehicle Service Item</a>
+        <a mat-list-item (click)="logout()">Logout</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+          <ng-content></ng-content>
+        </div>
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+
+

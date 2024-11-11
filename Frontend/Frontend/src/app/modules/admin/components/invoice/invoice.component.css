@@ -1,0 +1,96 @@
+.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+.button {
+    background-color: skyblue;
+    padding: 15px 30px; /* Adjust padding to make it big */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px; 
+}
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    .dashboard {
+      visibility: visible;
+      
+    }
+}
+
+/* Invoice container styles */
+#print-section {
+    width: 800px; /* Adjust width as needed */
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Invoice title styles */
+  .invoice-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .invoice-title h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .invoice-title h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  /* Address styles */
+  address {
+    font-style: normal;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  /* Table row styles for subtotals, etc. */
+  .thick-line {
+    border-top: 2px solid #ddd;
+  }
+  
+  .no-line {
+    border-top: 0;
+  }
+  
+  

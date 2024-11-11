@@ -1,0 +1,26 @@
+<app-admindashboard>
+    <div class="col-md-6 offset-md-3">
+        <h3>Update Item</h3>
+        <br>
+        <form (ngSubmit)="onSubmit()">
+          <div *ngIf="item">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="item.itemName" name="name" />
+            </div>
+            <br>
+            <div class="form-group">
+              <label>Description</label>
+              <input type="text" class="form-control" id="description" [(ngModel)]="item.itemDescription" name="description" />
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Cost</label>
+                <input type="text" class="form-control" id="cost" [(ngModel)]="item.itemCost" name="cost" />
+              </div>
+          </div>
+          <br>
+          <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+      </div>
+</app-admindashboard>

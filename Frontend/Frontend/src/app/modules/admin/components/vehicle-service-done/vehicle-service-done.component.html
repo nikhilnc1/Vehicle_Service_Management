@@ -1,0 +1,34 @@
+<app-admindashboard>
+
+    <div class="col-md-8 offset-md-2">
+        <h2 class="text-center">Vehicle List</h2>
+          <br>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Vehicle Name</th>
+              <th>Owner Name</th>
+              <th>Year</th>
+              <th>License Plate</th>
+              <th>Service Status</th>
+              <th> Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vehicle of vehicles">
+              <td>{{ vehicle.name }}</td>
+              <td>{{ vehicle.ownerName }}</td>
+              <td>{{ vehicle.year }}</td>
+              <td>{{ vehicle.licensePlate }}</td>
+              <td>{{ vehicle.serviceStatus }}</td>
+              <td>
+                  <button (click)="printBill(vehicle.id)" class="btn btn-info">Print Bill</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="button-container">
+          <button routerLink="/admin-dashboard/dashboard" routerLinkActive="active" class="text-center btn btn-primary" style="background-color: #673ab7;">Back</button>
+      </div>
+      </div>
+    </app-admindashboard>

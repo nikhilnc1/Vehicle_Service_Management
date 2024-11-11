@@ -1,0 +1,73 @@
+<div class="col-md-8 offset-md-2">
+  <h2 class="text-center">Item List</h2>
+  <br />
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Description</th>
+        <th>Cost</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.itemName }}</td>
+        <td>{{ item.itemDescription }}</td>
+        <td>{{ item.itemCost }}</td>
+        <td>
+          <button (click)="addToCart(item)">Add to Cart</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br>
+
+  <table *ngIf="items1.length > 0" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Description</th>
+        <th>Cost</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items1">
+        <td>{{ item.itemName }}</td>
+        <td>{{ item.itemDescription }}</td>
+        <td>{{ item.itemCost }}</td>
+        <td>
+          <div class="row">
+            <div class="col-4">
+                <div class="" style=" ">
+                    <button class="btn btn-primary m-1" (click)="decrement(item.id)">-</button>
+                    <span>{{ item.quantity }}</span>
+                    <button class="btn btn-primary m-1" (click)="increment(item.id)">+</button>
+                </div>
+            </div>
+            <div class="col m-1">
+                <button class="btn btn-danger" (click)="removeItem(item.id)" style="">Delete</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form (ngSubmit)="onSubmit()">
+    <div *ngIf="vehicle">
+      <div hidden>
+        <div class="col-md-10">
+          <select name="Status" class="form-control" [(ngModel)]="vehicle.serviceStatus"></select>
+        </div>
+      </div>
+      <br>
+      <button *ngIf="items1.length > 0" class="btn btn-success" type="submit">Submit</button>
+    </div>
+  </form>
+  
+  
+  
+</div>

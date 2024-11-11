@@ -1,0 +1,5 @@
+/* Change border color for invalid input fields */
+input.ng-invalid {
+    border-color: red; /* Change to whatever color you prefer */
+}
+  
